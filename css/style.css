@@ -1,0 +1,17 @@
+px* {
+    margin:0;
+    padding: 0;
+}
+
+.auto {
+    width: 25px;
+    position: absolute;
+    top:230px;
+    left: 95px;
+}
+
+.pocketer{
+    background-image: url(../img/fondo.jpg);
+    width: 209px;
+    height: 354px;
+}

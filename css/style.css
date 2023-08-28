@@ -1,17 +1,62 @@
-px* {
+* {
     margin:0;
     padding: 0;
 }
 
+.contenedor {
+    display: grid;
+    grid-template-columns: 330px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.titulo{
+    width: 100%;
+
+}
+
 .auto {
     width: 25px;
-    position: absolute;
-    top:230px;
-    left: 95px;
+    position: relative;
+    top:220px;
+    left: 85px;
 }
 
 .pocketer{
     background-image: url(../img/fondo.jpg);
     width: 209px;
     height: 354px;
+    zoom: 140%;
+}
+
+.cajaabajo{
+    width: 105%;
+    position: relative;
+    top: 234px;
+    z-index: 1;
+}
+
+.botonera{
+    display: flex;
+    position: relative;
+    top: 280px;
+    z-index: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0
+}
+
+.arribayabajo{
+    display: flex;
+    position: relative;
+    left: 45px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.derechaizquierda{
+    display: flex;
+    position: relative;
+    left: -10px;
+    align-items: flex-start;
 }

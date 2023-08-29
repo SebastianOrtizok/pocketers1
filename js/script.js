@@ -4,77 +4,92 @@ let izquierda=document.querySelector(".izquierda");
 let derecha=document.querySelector(".derecha"); 
 let auto=document.querySelector(".auto");
 let contenedor=document.querySelector(".contenedor")
-const start = document.getElementById("start");
+const start = document.querySelectorAll(".start");
 console.log(start)
 let positionx=95;
 let positiony=230;
 let rotationAngle=0;
-let direction="rigt";
-let click=0;
 
 contenedor.addEventListener("click", function(){
-    start.style.display="none";
+    start.forEach(function(element){
+        element.style.display="none";
+    })
 })
 
 arriba.addEventListener("click", function(){
-    if (direction=="arriba" && click==1){
-        rotationAngle = 270;
-        auto.style.transform = `rotate(${rotationAngle}deg)`;
-    }
-    if (direction!="arriba"){
-        click=0
-        rotationAngle = 135;
+    if (rotationAngle<270 & rotationAngle!=0 ){
+        rotationAngle += 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
         direction="arriba"
     }
-    click+=1
-    auto.style.top = (positiony -= 5) + "px";
+    if (rotationAngle==0){
+        rotationAngle=360
+    }
+    if (rotationAngle>270){
+        rotationAngle -= 45;
+        auto.style.transform = `rotate(${rotationAngle}deg)`;
+    }
+    if (positiony >10){
+        auto.style.top = (positiony -= 5) + "px";
+        
+    }
 })
 
 abajo.addEventListener("click", function(){
-  
-    if (direction=="abajo" && click==1){
-        rotationAngle = 90;
+    if (rotationAngle<90){
+        rotationAngle += 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
     }
-    if (direction!="abajo"){
-        click=0
-        rotationAngle = 45;
+    if (rotationAngle>90){
+        rotationAngle -= 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
-        direction="abajo"
     }
-    click+=1
-    auto.style.top = (positiony += 5) + "px";
+
+
+    if (positiony<220){
+        auto.style.top = (positiony += 5) + "px";
+
+    }
 })
 
 derecha.addEventListener("click", function(){
-    if (direction=="derecha" && click==1){
-        rotationAngle = 0;
+    if (rotationAngle>0 & rotationAngle<=180){
+        rotationAngle -= 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
     }
-    if (direction!="derecha" ){
-        click=0;
-        rotationAngle = 315;
+
+    if (rotationAngle>180){
+        rotationAngle += 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
-        direction="derecha"
     }
-    click+=1
+    if (rotationAngle==360){
+        rotationAngle=0
+    }
+
+    if (rotationAngle<0){
+        rotationAngle += 45;
+        auto.style.transform = `rotate(${rotationAngle}deg)`;
+    }
+
+if (positionx<170) {
     auto.style.left = (positionx+= 10) + "px";
+}
 })
 
 izquierda.addEventListener("click", function(){
-    if (direction=="izquierda" && click==1){
-        rotationAngle = 180;
+    if (rotationAngle>180){
+        rotationAngle -= 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
     }
-    if (direction!="izquierda"){
-        click=0;
-        rotationAngle = 225;
+    if (rotationAngle<180){
+        rotationAngle += 45;
         auto.style.transform = `rotate(${rotationAngle}deg)`;
-        direction="izquierda"
     }
-    click+=1
-    auto.style.left = (positionx -= 10) + "px";
+
+    if (positionx >15){
+
+        auto.style.left = (positionx -= 10) + "px";
+    }
 })
 
 

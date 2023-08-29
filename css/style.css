@@ -39,11 +39,11 @@
 .botonera{
     display: flex;
     position: relative;
-    top: 280px;
+    top: 270px;
     z-index: 0;
     flex-direction: row;
     justify-content: space-between;
-    opacity: 0
+    opacity: 0.5;
 }
 
 .arribayabajo{
@@ -52,6 +52,7 @@
     left: 45px;
     flex-direction: column;
     align-items: flex-start;
+    top:10px;
 }
 
 .derechaizquierda{
@@ -59,4 +60,12 @@
     position: relative;
     left: -10px;
     align-items: flex-start;
+}
+
+.izquierda{
+    height: 50px;
+}
+
+.derecha{
+    height: 50px;
 }
